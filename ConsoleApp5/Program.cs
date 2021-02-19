@@ -20,7 +20,8 @@ namespace ConsoleApp5
             IEnumerator enumerator = enumerable.GetEnumerator();
             while (enumerator.MoveNext())
             {
-                Console.WriteLine(enumerator.Current);
+                String myIndex = enumerator.Current as String;
+                Console.WriteLine(myIndex);
             }
             enumerator.Reset();
 

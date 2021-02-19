@@ -33,6 +33,7 @@ namespace ConsoleApp5
                 return true;
             }
             else
+                Reset();
                 return false;
         }
 
