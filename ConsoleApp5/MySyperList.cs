@@ -22,10 +22,13 @@ namespace ConsoleApp5
         {
             get { return collectionsArray[position]; }
         }
-
+        public void Remove(int index)
+        {
+            collectionsArray[index] = null;
+        }
         public void Add(MySuperCollection item)
         {
-           var corentIndex = collectionsArray[collectionsArray.Count(i=>i!=null)] = item;
+          collectionsArray[collectionsArray.Count(i=>i!=null)] = item;
         }
 
         public bool MoveNext()
