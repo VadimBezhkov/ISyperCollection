@@ -7,33 +7,40 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp5
 {
-    public class MySyperList : IEnumerable, IEnumerator
+    public class MySyperList : IEnumerator,IEnumerable
     {
-        private string[] _data;
+        private string [] _data;
+        int position = -1;
+     
         public MySyperList()
         {
             _data = new string[5];
         }
-
-        public object Current => throw new NotImplementedException();
-
         public void Add(string item)
         {
            var corentIndex =_data[_data.Count(i=>i!=null)] = item;
         }
-        public IEnumerator GetEnumerator()
-        {
-            return this as IEnumerator;
-        }
 
         public bool MoveNext()
         {
-            throw new NotImplementedException();
+            if (position < _data.Length - 1)
+            {
+                position++;
+                return true;
+            }
+            else
+                Reset();
+                return false;
         }
 
         public void Reset()
         {
-            throw new NotImplementedException();
+            position = -1;
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return MySuperEnumerator();
         }
     }
 }
