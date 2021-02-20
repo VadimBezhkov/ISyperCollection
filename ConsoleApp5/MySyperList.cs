@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace ConsoleApp5
 {
     public class MySyperList : IEnumerator,IEnumerable
+
     {
         private string [] _data;
         int position = -1;
@@ -16,6 +17,11 @@ namespace ConsoleApp5
         {
             _data = new string[5];
         }
+        public object Current
+        {
+            get { return _data[position]; }
+        }
+
         public void Add(string item)
         {
            var corentIndex =_data[_data.Count(i=>i!=null)] = item;
@@ -40,7 +46,8 @@ namespace ConsoleApp5
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return MySuperEnumerator();
+            return this as IEnumerator;
         }
+
     }
 }
