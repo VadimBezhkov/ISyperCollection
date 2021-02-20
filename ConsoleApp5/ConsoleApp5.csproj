@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MySuperEnumerator.cs" />
+    <Compile Include="MySuperCollection.cs" />
     <Compile Include="MySyperList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
