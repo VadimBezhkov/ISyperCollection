@@ -13,7 +13,14 @@ namespace ConsoleApp5
         public MySuperCollection[] collectionsArray; 
         
         int position = -1;
-     
+         static MySyperList()
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Hi alexey glad to welcome you to my homework." +
+                " \nI hope for loyalty and understanding" + "\n");
+            Console.ResetColor();
+
+        }
         public MySyperList()
         {
             collectionsArray = new MySuperCollection[5];
@@ -26,6 +33,12 @@ namespace ConsoleApp5
         {
             collectionsArray[index] = null;
         }
+        //public void Remove (string text)
+        //{
+        //   var parenname = collectionsArray.FirstOrDefault(x=>x.Name==text);
+        //   //var item = collectionsArray[collectionsArray.];
+
+        //}
         public void Add(MySuperCollection item)
         {
           collectionsArray[collectionsArray.Count(i=>i!=null)] = item;
