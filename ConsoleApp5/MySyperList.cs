@@ -33,12 +33,26 @@ namespace ConsoleApp5
         {
             collectionsArray[index] = null;
         }
-        //public void Remove (string text)
-        //{
-        //   var parenname = collectionsArray.FirstOrDefault(x=>x.Name==text);
-        //   //var item = collectionsArray[collectionsArray.];
-
-        //}
+        public void Remove(string text)
+        {
+            try
+            {
+                var parenname = collectionsArray.FirstOrDefault(x => x.Name == text);
+                for (int i = 0; i < collectionsArray.Length; i++)
+                {
+                    if (collectionsArray[i] == parenname)
+                        collectionsArray[i] = null;
+                }
+            }
+            catch (NullReferenceException)
+            {
+                Console.WriteLine("One of the array elements is empty");
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine($"Исключение: {ex.Message}");
+            }
+        }
         public void Add(MySuperCollection item)
         {
           collectionsArray[collectionsArray.Count(i=>i!=null)] = item;
