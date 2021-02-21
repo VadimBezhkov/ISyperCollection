@@ -19,20 +19,24 @@ namespace ConsoleApp5
             Console.WriteLine("Hi alexey glad to welcome you to my homework." +
                 " \nI hope for loyalty and understanding" + "\n");
             Console.ResetColor();
-
         }
+
         public MySyperList()
         {
             collectionsArray = new MySuperCollection[5];
         }
+
         public object Current
         {
             get { return collectionsArray[position]; }
         }
+
         public void Remove(int index)
         {
+            //collectionsArray[index] = new MySuperCollection ("",0,0);
             collectionsArray[index] = null;
         }
+
         public void Remove(string text)
         {
             try
@@ -74,6 +78,7 @@ namespace ConsoleApp5
         {
             position = -1;
         }
+
         IEnumerator IEnumerable.GetEnumerator()
         {
             return this as IEnumerator;
