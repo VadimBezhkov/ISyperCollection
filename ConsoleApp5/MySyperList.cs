@@ -10,10 +10,10 @@ namespace ConsoleApp5
     public class MySyperList : IEnumerator, IEnumerable
 
     {
-        public MySuperCollection[] collectionsArray; 
-        
+        public MySuperCollection[] collectionsArray;
+
         int position = -1;
-         static MySyperList()
+        static MySyperList()
         {
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Hi alexey glad to welcome you to my homework." +
@@ -23,7 +23,7 @@ namespace ConsoleApp5
 
         public MySyperList()
         {
-            collectionsArray = new MySuperCollection[5];
+            collectionsArray = new MySuperCollection[1];
         }
 
         public object Current
@@ -45,7 +45,7 @@ namespace ConsoleApp5
             for (int i = 0; i < collectionsArray.Length; i++)
             {
                 if (i != index)
-                    tempArray[i- indexarray] = collectionsArray[i];
+                    tempArray[i - indexarray] = collectionsArray[i];
                 else
                     indexarray++;
 
@@ -62,21 +62,29 @@ namespace ConsoleApp5
                 {
                     if (collectionsArray[i] == parenname)
                         Remove(i);
-                        //collectionsArray[i] = null;
+                    //collectionsArray[i] = null;
                 }
             }
             catch (NullReferenceException)
             {
                 Console.WriteLine("One of the array elements is empty");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine($"Исключение: {ex.Message}");
             }
         }
         public void Add(MySuperCollection item)
         {
-          collectionsArray[collectionsArray.Count(i=>i!=null)] = item;
+            collectionsArray[collectionsArray.Count(i => i != null)] = item;
+            int value = collectionsArray.Length+1;
+            MySuperCollection[] tempArray = new MySuperCollection[value];
+            for (int i = 0; i <= collectionsArray.Length-1; i++)
+            {
+                tempArray[i] = collectionsArray[i];
+
+            }
+            collectionsArray = tempArray;
         }
 
         public bool MoveNext()
@@ -88,7 +96,7 @@ namespace ConsoleApp5
             }
             else
                 Reset();
-                return false;
+            return false;
         }
 
         public void Reset()

@@ -17,15 +17,18 @@ namespace ConsoleApp5
             MyCollection.Add(new MySuperCollection("Pavel",1,2));
             MyCollection.Add(new MySuperCollection("Timofey", 9, 8));
             MyCollection.Add(new MySuperCollection("Ivan", 4, 8));
+            MyCollection.Add(new MySuperCollection("Pavel121221", 1, 2));
+            MyCollection.Add(new MySuperCollection("Timofey122121", 9, 8));
+            MyCollection.Add(new MySuperCollection("Ivan121212", 4, 8));
             MyCollection.Remove(2);
-            MyCollection.Remove("Vadim");
+            //MyCollection.Remove("Ivan");
             IEnumerable enumerable = MyCollection as IEnumerable;
             IEnumerator enumerator = enumerable.GetEnumerator();
             while (enumerator.MoveNext())
             {
                 MySuperCollection myIndex = enumerator.Current as MySuperCollection;
-                if(myIndex!=null)
-                Console.WriteLine("Name {0}, Fild1 {1}, Fild2 {2}", myIndex.Name, myIndex.Fild1, myIndex.Fild2);
+                if (myIndex != null)
+                    Console.WriteLine("Name {0}, Fild1 {1}, Fild2 {2}", myIndex.Name, myIndex.Fild1, myIndex.Fild2);
             }
 
             Console.ReadKey();
