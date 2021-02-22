@@ -34,7 +34,23 @@ namespace ConsoleApp5
         public void Remove(int index)
         {
             //collectionsArray[index] = new MySuperCollection ("",0,0);
-            collectionsArray[index] = null;
+            //collectionsArray[index] = null;
+            int value = collectionsArray.Length;
+            if (value > 1)
+                value--;
+            else
+                Console.WriteLine("Error array less than 2 elements could not be created");
+            MySuperCollection[] tempArray = new MySuperCollection[value];
+            int indexarray = 0;
+            for (int i = 0; i < collectionsArray.Length; i++)
+            {
+                if (i != index)
+                    tempArray[i- indexarray] = collectionsArray[i];
+                else
+                    indexarray++;
+
+            }
+            collectionsArray = tempArray;
         }
 
         public void Remove(string text)
@@ -45,7 +61,8 @@ namespace ConsoleApp5
                 for (int i = 0; i < collectionsArray.Length; i++)
                 {
                     if (collectionsArray[i] == parenname)
-                        collectionsArray[i] = null;
+                        Remove(i);
+                        //collectionsArray[i] = null;
                 }
             }
             catch (NullReferenceException)
