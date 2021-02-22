@@ -21,7 +21,7 @@ namespace ConsoleApp5
             MyCollection.Add(new MySuperCollection("Timofey122121", 9, 8));
             MyCollection.Add(new MySuperCollection("Ivan121212", 4, 8));
             MyCollection.Remove(2);
-            //MyCollection.Remove("Ivan");
+            MyCollection.Remove("Ivan");
             IEnumerable enumerable = MyCollection as IEnumerable;
             IEnumerator enumerator = enumerable.GetEnumerator();
             while (enumerator.MoveNext())
