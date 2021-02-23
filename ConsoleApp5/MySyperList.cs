@@ -10,9 +10,14 @@ namespace ConsoleApp5
     public class MySyperList : IEnumerator, IEnumerable
 
     {
+        public delegate void MyDelegate(string text);
         public MySuperCollection[] collectionsArray;
-
+        MyDelegate _mes;
         int position = -1;
+        public void RegisterDelegate(MyDelegate mes)
+        {
+            _mes = mes;
+        }
         static MySyperList()
         {
             Console.ForegroundColor = ConsoleColor.White;
@@ -47,8 +52,13 @@ namespace ConsoleApp5
                 if (i != index)
                     tempArray[i - indexarray] = collectionsArray[i];
                 else
+                {
                     indexarray++;
-
+                    if (_mes != null)
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                    _mes($"object deleted {collectionsArray[index].Name} {collectionsArray[index].Fild1} {collectionsArray[index].Fild2} idex {index}");
+                    Console.ResetColor();
+                }
             }
             collectionsArray = tempArray;
         }
@@ -77,12 +87,11 @@ namespace ConsoleApp5
         public void Add(MySuperCollection item)
         {
             collectionsArray[collectionsArray.Count(i => i != null)] = item;
-            int value = collectionsArray.Length+1;
+            int value = collectionsArray.Length + 1;
             MySuperCollection[] tempArray = new MySuperCollection[value];
-            for (int i = 0; i <= collectionsArray.Length-1; i++)
+            for (int i = 0; i <= collectionsArray.Length - 1; i++)
             {
                 tempArray[i] = collectionsArray[i];
-
             }
             collectionsArray = tempArray;
         }
