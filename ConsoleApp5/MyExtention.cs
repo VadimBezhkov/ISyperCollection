@@ -19,11 +19,11 @@ namespace ExtentionMy
         public static void MySort(this MySuperCollection[] collectionsArray)
         {
             MySuperCollection[] temp = new MySuperCollection[collectionsArray.Length];
-            for (int j = 0; j < collectionsArray.Length - 2; j++)
+            for (int j = 0; j < collectionsArray.Length - 1; j++)
             {
-                for (int i = 0; i < collectionsArray.Length - 2; i++)
+                for (int i = 0; i < collectionsArray.Length - 1; i++)
                 {
-                    if (collectionsArray[i].Name.Length > collectionsArray[i + 1].Name.Length && collectionsArray[i + 1] != null)
+                    if (collectionsArray[i].Name.Length > collectionsArray[i + 1]?.Name.Length)
                     {
                         temp[i] = collectionsArray[i];
                         collectionsArray[i] = collectionsArray[i + 1];
