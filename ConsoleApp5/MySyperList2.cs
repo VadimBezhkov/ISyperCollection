@@ -52,7 +52,7 @@ namespace ConsoleApp5
         {
             try
             {
-                var parenname = collectionsArray.FirstOrDefault(x => x?.Name == text);
+                var parenname = collectionsArray.FirstOrDefault(x => x.Name == text);
                 for (int i = 0; i < collectionsArray.Length; i++)
                 {
                     if (collectionsArray[i] == parenname)

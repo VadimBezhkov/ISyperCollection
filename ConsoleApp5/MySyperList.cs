@@ -59,6 +59,7 @@ namespace ConsoleApp5
                 position++;
                 return true;
             }
+
             else
                 Reset();
             return false;
