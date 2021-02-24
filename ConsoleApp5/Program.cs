@@ -12,6 +12,7 @@ namespace ConsoleApp5
     {
         static void Main(string[] args)
         {
+            //create my collection
             MySyperList MyCollection = new MySyperList();
             MyCollection.RegisterDelegate(new MySyperList.MyDelegate(Show_Message));
 
@@ -36,10 +37,10 @@ namespace ConsoleApp5
             MySuperCollection time = new MySuperCollection();
             time.MyData = DateTime.Now;
             time.MyData.Print();
-            
+
+            //my foreach loop analogy
             IEnumerable enumerable = MyCollection as IEnumerable;
             IEnumerator enumerator = enumerable.GetEnumerator();
-
             while (enumerator.MoveNext())
             {
                 MySuperCollection myIndex = enumerator.Current as MySuperCollection;

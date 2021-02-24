@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp5
 {
-   public sealed class MySuperCollection
+    //Collection description
+    public sealed class MySuperCollection
     {
         private string name;
         public DateTime MyData { get; set; }

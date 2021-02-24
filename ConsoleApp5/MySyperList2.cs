@@ -8,6 +8,7 @@ namespace ConsoleApp5
 {
     public partial class MySyperList
     {
+        //delete by index my collection item
         public void Remove(int index)
         {
             //collectionsArray[index] = new MySuperCollection ("",0,0);
@@ -48,6 +49,7 @@ namespace ConsoleApp5
             collectionsArray = tempArray;
         }
 
+        //delete by name my collection item
         public void Remove(string text)
         {
             try

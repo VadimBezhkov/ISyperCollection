@@ -9,6 +9,7 @@ namespace ExtentionMy
 {
     static class MyExtention
     {
+        // display of the current date and time
         public static void Print(this DateTime date)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -16,6 +17,7 @@ namespace ExtentionMy
             Console.ResetColor();
         }
 
+        //Sorting my collection
         public static void MySort(this MySuperCollection[] collectionsArray)
         {
             MySuperCollection[] temp = new MySuperCollection[collectionsArray.Length];
