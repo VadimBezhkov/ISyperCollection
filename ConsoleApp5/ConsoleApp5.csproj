@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyExtention.cs" />
     <Compile Include="MySuperCollection.cs" />
     <Compile Include="MySyperList.cs" />
     <Compile Include="Program.cs" />

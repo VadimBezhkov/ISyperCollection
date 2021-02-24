@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExtentionMy;
 
 namespace ConsoleApp5
 {
-    public class MySuperCollection
+   public sealed class MySuperCollection
     {
         private string name;
-
+        public DateTime MyData { get; set; }
         public string Name
         {
             get { return name; }
@@ -29,6 +30,10 @@ namespace ConsoleApp5
         {
             get { return fild2; }
             set { fild2 = value; }
+        }
+        public MySuperCollection()
+        {
+
         }
         public MySuperCollection(string _name,int _fild1, int _fild2)
         {

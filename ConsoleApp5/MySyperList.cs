@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace ConsoleApp5
     {
         public delegate void MyDelegate(string text);
         public MySuperCollection[] collectionsArray;
+
         MyDelegate _mes;
         int position = -1;
         public void RegisterDelegate(MyDelegate mes)
@@ -25,7 +27,6 @@ namespace ConsoleApp5
                 " \nI hope for loyalty and understanding" + "\n");
             Console.ResetColor();
         }
-
         public MySyperList()
         {
             collectionsArray = new MySuperCollection[1];
@@ -54,10 +55,12 @@ namespace ConsoleApp5
                 else
                 {
                     indexarray++;
-                    if (_mes != null)
-                        Console.ForegroundColor = ConsoleColor.Blue;
-                    _mes($"object deleted {collectionsArray[index].Name} {collectionsArray[index].Fild1} {collectionsArray[index].Fild2} idex {index}");
-                    Console.ResetColor();
+                    {
+                        if (_mes != null)
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                        _mes($"object deleted {collectionsArray[index].Name} {collectionsArray[index].Fild1} {collectionsArray[index].Fild2} idex {index}");
+                        Console.ResetColor();
+                    }
                 }
             }
             collectionsArray = tempArray;

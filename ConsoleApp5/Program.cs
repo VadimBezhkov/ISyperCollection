@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExtentionMy;
 
 namespace ConsoleApp5
 {
@@ -30,6 +31,10 @@ namespace ConsoleApp5
             //MyCollection.Remove("Ivan1212qweqw12"); // раскоментировать для теста
             Console.WriteLine();
 
+            MySuperCollection time = new MySuperCollection();
+            time.MyData = DateTime.Now;
+            time.MyData.Print();
+            
             IEnumerable enumerable = MyCollection as IEnumerable;
             IEnumerator enumerator = enumerable.GetEnumerator();
 
