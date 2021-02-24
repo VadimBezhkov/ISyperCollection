@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ExtentionMy.MyExtention">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAEAAA=</HashCode>
+      <FileName>MyExtention.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConsoleApp5.MySuperCollection">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAgAAAAAAAIAAAAAAQQAAAEEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MySuperCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConsoleApp5.MySyperList" BaseTypeListCollapsed="true">
+    <Position X="0.75" Y="3" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="ConsoleApp5.MySyperList.MyDelegate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>MySyperList.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAEAABAAAAACAJAAAAAAAAAAEIIAAAQAAAAA=</HashCode>
+      <FileName>MySyperList.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ConsoleApp5.Program">
+    <Position X="4.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
