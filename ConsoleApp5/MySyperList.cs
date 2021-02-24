@@ -9,7 +9,7 @@ using ExtentionMy;
 
 namespace ConsoleApp5
 {
-    public class MySyperList : IEnumerator, IEnumerable
+    public partial class MySyperList : IEnumerator, IEnumerable
 
     {
         public delegate void MyDelegate(string text);
@@ -38,62 +38,10 @@ namespace ConsoleApp5
             get { return collectionsArray[position]; }
         }
 
-        public void Remove(int index)
-        {
-            //collectionsArray[index] = new MySuperCollection ("",0,0);
-            //collectionsArray[index] = null;
-            int value = collectionsArray.Length;
-            if (value > 1)
-                value--;
-            else
-                Console.WriteLine("Error array less than 2 elements could not be created");
-            MySuperCollection[] tempArray = new MySuperCollection[value];
-            int indexarray = 0;
-            for (int i = 0; i < collectionsArray.Length; i++)
-            {
-                if (i != index)
-                    tempArray[i - indexarray] = collectionsArray[i];
-                else
-                {
-                    indexarray++;
-                    {
-                        if (_mes != null)
-                            Console.ForegroundColor = ConsoleColor.Blue;
-                        _mes($"object deleted {collectionsArray[index].Name} {collectionsArray[index].Fild1} {collectionsArray[index].Fild2} idex {index}");
-                        Console.ResetColor();
-                    }
-                }
-            }
-            collectionsArray = tempArray;
-        }
-
-        public void Remove(string text)
-        {
-            try
-            {
-                var parenname = collectionsArray.FirstOrDefault(x => x.Name == text);
-                for (int i = 0; i < collectionsArray.Length; i++)
-                {
-                    if (collectionsArray[i] == parenname)
-                        Remove(i);
-                    //collectionsArray[i] = null;
-                }
-            }
-
-            catch (NullReferenceException)
-            {
-                Console.WriteLine("One of the array elements is empty");
-            }
-
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Исключение: {ex.Message}");
-            }
-        }
         public void Add(MySuperCollection item)
         {
             collectionsArray[collectionsArray.Count(i => i != null)] = item;
-            int value = collectionsArray.Length+1;
+            int value = collectionsArray.Length + 1;
             MySuperCollection[] tempArray = new MySuperCollection[value];
 
             for (int i = 0; i <= collectionsArray.Length - 1; i++)

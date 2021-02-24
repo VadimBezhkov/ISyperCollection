@@ -46,6 +46,7 @@
     <Compile Include="MyExtention.cs" />
     <Compile Include="MySuperCollection.cs" />
     <Compile Include="MySyperList.cs" />
+    <Compile Include="MySyperList2.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
