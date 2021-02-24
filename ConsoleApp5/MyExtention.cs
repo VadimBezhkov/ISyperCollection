@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleApp5;
 
 namespace ExtentionMy
 {
@@ -13,6 +14,23 @@ namespace ExtentionMy
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine($"{date} \n");
             Console.ResetColor();
+        }
+
+        public static void MySort(this MySuperCollection[] collectionsArray)
+        {
+            MySuperCollection[] temp = new MySuperCollection[collectionsArray.Length];
+            for (int j = 0; j < collectionsArray.Length - 2; j++)
+            {
+                for (int i = 0; i < collectionsArray.Length - 2; i++)
+                {
+                    if (collectionsArray[i].Name.Length > collectionsArray[i + 1].Name.Length && collectionsArray[i + 1] != null)
+                    {
+                        temp[i] = collectionsArray[i];
+                        collectionsArray[i] = collectionsArray[i + 1];
+                        collectionsArray[i + 1] = temp[i];
+                    }
+                }
+            }
         }
     }
 }

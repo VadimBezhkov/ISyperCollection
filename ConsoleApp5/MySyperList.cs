@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExtentionMy;
 
 namespace ConsoleApp5
 {
@@ -78,10 +79,12 @@ namespace ConsoleApp5
                     //collectionsArray[i] = null;
                 }
             }
+
             catch (NullReferenceException)
             {
                 Console.WriteLine("One of the array elements is empty");
             }
+
             catch (Exception ex)
             {
                 Console.WriteLine($"Исключение: {ex.Message}");
@@ -90,12 +93,14 @@ namespace ConsoleApp5
         public void Add(MySuperCollection item)
         {
             collectionsArray[collectionsArray.Count(i => i != null)] = item;
-            int value = collectionsArray.Length + 1;
+            int value = collectionsArray.Length+1;
             MySuperCollection[] tempArray = new MySuperCollection[value];
+
             for (int i = 0; i <= collectionsArray.Length - 1; i++)
             {
                 tempArray[i] = collectionsArray[i];
             }
+
             collectionsArray = tempArray;
         }
 

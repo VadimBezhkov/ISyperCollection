@@ -31,6 +31,8 @@ namespace ConsoleApp5
             //MyCollection.Remove("Ivan1212qweqw12"); // раскоментировать для теста
             Console.WriteLine();
 
+            MyCollection.collectionsArray.MySort();
+
             MySuperCollection time = new MySuperCollection();
             time.MyData = DateTime.Now;
             time.MyData.Print();
